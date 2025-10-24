@@ -5,6 +5,8 @@
 
 Este proyecto integra **modelos de Deep Learning en Unity** usando **Unity Sentis**, logrando una experiencia accesible y visualmente atractiva sin depender de servidores externos.
 
+**Vídeo Demo:** https://youtu.be/lcPrdR1LgGw
+
 ---
 
 ## 🎯 Objetivo del proyecto
