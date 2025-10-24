@@ -1,58 +1,105 @@
-# DogEmoScan Sistema Interactivo de Clasificación Emocional y Estilización Artística de Imágenes Caninas Usando Redes Neuronales
+# 🐶 DogEmoScan  
+### Sistema Interactivo de Clasificación Emocional y Estilización Artística de Imágenes Caninas con IA (Unity + Sentis)
 
-DogEmoScan es una aplicación interactiva que permite a los usuarios identificar las emociones de sus perros a partir de una imagen y estilizarla artísticamente en formato óleo. Combinando el poder del aprendizaje profundo con una experiencia visual atractiva, DogEmoScan promueve la empatía y el bienestar animal a través de la inteligencia artificial.
+**DogEmoScan** es una aplicación interactiva que combina **visión por computadora**, **redes neuronales** y **procesamiento de imágenes** para analizar emociones de perros a partir de una fotografía y generar una **estilización artística tipo óleo** mediante un modelo generativo.
 
-Este repositorio contiene:
+Este proyecto integra **modelos de Deep Learning en Unity** usando **Unity Sentis**, logrando una experiencia accesible y visualmente atractiva sin depender de servidores externos.
 
-🧩 Proyecto en Unity
-Cuatro carpetas de proyecto DogEmoScan con interfaz gráfica para abrir con Unity. Incluye:
+---
 
-Carga de imagen.
+## 🎯 Objetivo del proyecto
 
-Clasificación emocional.
+- Identificar emociones caninas a partir de una imagen.
+- Interpretar el resultado mediante etiquetas emocionales: **Feliz, Enojado, Triste o Neutro**.
+- Aplicar un estilo artístico tipo **óleo** usando una red generativa basada en FaceGAN.
+- Ofrecer una experiencia interactiva educativa sobre emociones animales.
 
-Estilización artística.
+---
 
-Visualización en un calendario interactivo.
+## 🧩 Contenido del Repositorio
 
-📓 Notebooks en Colab
+### ✅ Proyecto en Unity
+Incluye la estructura completa del proyecto listo para ser abierto en **Unity 2022.3+** con **Unity Sentis**, con las siguientes funcionalidades:
 
-Entrenamiento_resnet18.ipynb: Entrenamiento del modelo ResNet-18 para clasificación de emociones.
-ModeloEmociones_faceGan: Script para inferencia de emociones y transformación de imágenes en estilo óleo, sin interfaz gráfica.
+| Módulo | Descripción |
+|--------|-------------|
+| 📷 Carga de imagen | El usuario selecciona una imagen desde su dispositivo |
+| 🤖 Clasificación emocional | Uso de modelo ResNet-18 exportado a ONNX |
+| 🎨 Estilización artística | Transformación tipo pintura al óleo |
+| 📅 Vista calendario | Galería interactiva con resultados |
 
-🎥 Video demostrativo
-Video del resultado logrado desde el Player de Unity.
+---
 
+### 📓 Notebooks (Google Colab)
 
-Clasificación de Emociones - ResNet-18
-Implementado en PyTorch.
-Estilización Artística - FaceGAN
-Modelo generativo preentrenado que transforma imágenes faciales en retratos con estilo óleo.
+| Notebook | Descripción |
+|----------|-------------|
+| `Entrenamiento_resnet18.ipynb` | Entrenamiento para clasificación de emociones con ResNet-18 (PyTorch) |
+| `ModeloEmociones_faceGan.ipynb` | Inferencia + estilo artístico sin interfaz gráfica |
 
-Adaptado para imágenes caninas como parte de la experiencia emocional-visual.
+---
 
-Implementado también en formato ONNX.
+## 🧠 Inteligencia Artificial Utilizada
 
-Se descartaron alternativas como CartoonGAN y StyleGAN2 por requerimientos computacionales y tiempo de entrenamiento.
-Entrenado con un dataset personalizado de imágenes caninas etiquetadas en 4 clases emocionales: Feliz, Enojado, Triste y Neutro.
+### 🔹 Clasificación Emocional (ResNet-18)
+- Framework: PyTorch → Exportado a **ONNX para Sentis**
+- Dataset: Imágenes caninas clasificadas en 4 emociones
+- Salida: Softmax con la probabilidad de cada emoción
 
-Migrado a formato ONNX para integración en Unity a través de Unity Sentis.
+### 🔹 Estilización Artística (FaceGAN Adaptado)
+- Generación de estilo artístico tipo óleo
+- Adaptado para rostros de perros
+- Optimizado para inferencia en Unity
 
-Proceso de inferencia en Unity mediante tensores que devuelven la clase con mayor probabilidad.
-Instalación y Uso
-Requisitos
-Unity 2022.3+ con Sentis instalado.
+---
 
-Python 3.8+
+## ⚙️ Requisitos
 
-Bibliotecas: torch, torchvision, onnx, opencv-python, etc. (ver notebooks para más detalles)
+| Componente | Requisito |
+|-------------|-----------|
+| Unity | Versión **2022.3+** |
+| Dependencia IA | **Unity Sentis** |
+| Python (opcional) | **3.8+** (para reentrenar modelos) |
+| Bibliotecas IA | torch, torchvision, onnx, opencv-python |
 
-Autores
-Ana E. Pardo-Quiñonez — ana.pardo@uao.edu.co
+---
 
-Carol N. Quira-Campo — carol.quira@uao.edu.co
+## 🚀 Instalación y Uso
 
-Joan S. Salcedo-Obando — joan.salcedo@uao.edu.co
-Contribuciones
-¿Tienes ideas para mejorar DogEmoScan?
-¡Eres bienvenido a contribuir!
+1. Clona este repositorio
+   ````bash
+   git clone https://github.com/CarolQuira14/DogEmoScan.git
+2. Abre el proyecto en Unity (2022.3+).
+3. Instala **Sentis** desde Unity Package Manager.
+4. Ejecuta la escena **MainScene**.
+5. Carga una imagen y observa la clasificación + estilización.
+
+---
+## 👩‍💻 Rol en el Proyecto
+
+Este proyecto fue desarrollado de manera colaborativa. Mis responsabilidades principales fueron:
+
+✅ Integración del modelo ONNX en Unity usando Sentis  
+✅ Programación de interacción en Unity (C#)  
+✅ Optimización del pipeline de inferencia para ejecución en tiempo real  
+✅ Diseño técnico general del sistema  
+
+---
+
+## 👥 Autores
+
+| Nombre                           | Rol                                    | GitHub                                                             |
+| -------------------------------- | -------------------------------------- | ------------------------------------------------------------------ |
+| **Ana Elizabeth Pardo Quiñonez** | Diseño visual y dataset                | [https://github.com/aelizaa](https://github.com/aelizaa)           |
+| **Joan Sebastian Salcedo**       | UI/UX y estructura Unity               | [https://github.com/joansalcedo1](https://github.com/joansalcedo1) |
+| **Carol Natalia Quira Campo**    | Integración IA + Sentis · Programación | [https://github.com/CarolQuira14](https://github.com/CarolQuira14) |
+
+---
+
+## 📫 Contacto
+
+**Carol Natalia Quira Campo**
+Correo: carolquira14@gmail.com
+GitHub: [https://github.com/CarolQuira14](https://github.com/CarolQuira14)
+
+---
